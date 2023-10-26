@@ -1,11 +1,11 @@
 #!/bin/bash
 
-loop=50000
+loop=10
 count=0
 num=698394
 suffix=94
 datetime=$(date +'%Y%m%d_%H%M%S')
-output_file="10L_OTA_$datetime.txt"
+output_file="ota.txt"
 
 while [ $count -lt $loop ]
 do
