@@ -2,8 +2,8 @@
 
 loop=200000
 count=0
-num=708394
-suffix=94
+num=736415
+suffix=15
 datetime=$(date +'%Y%m%d_%H%M%S')
 output_file="ota.txt"
 
