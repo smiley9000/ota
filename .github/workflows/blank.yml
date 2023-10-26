@@ -1,0 +1,48 @@
+name: Custom Rom Builder Samsung Galaxy A01/M01
+
+on:
+  push:
+    branches:
+      - main  # Change this to your desired branch
+  workflow_dispatch:
+    inputs:
+      GSI:
+        description: 'direct link for Gsi image '
+        required: true
+        default: 'https://sourceforge.net/projects/andyyan-gsi/files/lineage-19.x/lineage-19.1-20230715-UNOFFICIAL-a64_bgN.img.xz'        
+      ARCH:
+        description: 'Arm32 or Arm64'
+        required: true
+        default: '32'                
+      NAME:
+        description: 'Rom Name'
+        required: true
+        default: 'LineageOS_19.1_SDM439_ARM32_Gapps'                
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y zip xz-utils unzip p7zip-full wget
+        
+    - name: Downloading your GSI
+      run: |
+        chmod 755 *
+        chmod 755 ./*
+
+    - name: Building
+      run: |
+        ./1.sh
+        
+    - name: Uploading The Zip
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ github.event.inputs.NAME }}   # Replace with a suitable name
+        path: ./ota.txt
