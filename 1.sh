@@ -1,8 +1,8 @@
 #!/bin/bash
 
-loop=10000
+loop=200000
 count=0
-num=698394
+num=708394
 suffix=94
 datetime=$(date +'%Y%m%d_%H%M%S')
 output_file="ota.txt"
