@@ -2,7 +2,7 @@
 
 loop=200000
 count=0
-num=836415
+num=896415
 suffix=15
 datetime=$(date +'%Y%m%d_%H%M%S')
 output_file="ota.txt"
