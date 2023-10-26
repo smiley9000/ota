@@ -1,6 +1,6 @@
 #!/bin/bash
 
-loop=10
+loop=10000
 count=0
 num=698394
 suffix=94
